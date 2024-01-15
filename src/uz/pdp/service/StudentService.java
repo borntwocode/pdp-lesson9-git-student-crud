@@ -3,17 +3,15 @@ package uz.pdp.service;
 import uz.pdp.db.StudentRepo;
 import uz.pdp.entity.Student;
 import uz.pdp.util.Input;
-
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public class StudentService {
     private static StudentRepo studentRepo = StudentRepo.getInstance();
-    public static Optional<Student> findUserById(UUID uuid){
+    public static Optional<Student> findUserById(Integer id){
         List<Student> students = studentRepo.findAll();
         for (Student student : students) {
-            if(student.getId().equals(uuid)){
+            if(student.getId().equals(id)){
                 return Optional.of(student);
             }
         }
@@ -26,6 +24,12 @@ public class StudentService {
                 Input.INPUT_STR("Enter Student Phone Number")
         );
         studentRepo.add(student);
+    }
+    public static void print(){
+        List<Student> all = studentRepo.findAll();
+        for (Student student : all) {
+            System.out.println();
+        }
     }
 
 }

@@ -10,6 +10,7 @@ public class Main {
             displayMenu();
             switch (Input.INPUT_INT("Choose")){
                 case 1 -> StudentService.add();
+                case 2 -> StudentService.print();
             }
         }
 
