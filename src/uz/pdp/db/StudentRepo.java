@@ -36,6 +36,7 @@ public class StudentRepo implements Repository<Student> {
     @Override
     public void add(Student student) {
         students.add(student);
+        upload();
     }
     private void upload(){
         try (
