@@ -1,9 +1,12 @@
 package uz.pdp.db;
 
 import uz.pdp.entity.Student;
+import uz.pdp.service.StudentService;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class StudentRepo implements Repository<Student> {
     private List<Student> students;
@@ -53,6 +56,7 @@ public class StudentRepo implements Repository<Student> {
 
     @Override
     public void update(Student student) {
+        Optional<Student> optStudent = StudentService.findUserById(student.getId());
 
     }
 

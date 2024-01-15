@@ -1,8 +1,10 @@
 package uz.pdp.entity;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class Student implements Serializable {
+    private UUID id;
     private String firstName;
     private String lastName;
     private String phone;
@@ -23,6 +25,10 @@ public class Student implements Serializable {
 
     public String getPhone() {
         return phone;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public void setFirstName(String firstName) {
