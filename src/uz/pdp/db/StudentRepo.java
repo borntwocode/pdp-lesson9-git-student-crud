@@ -58,7 +58,13 @@ public class StudentRepo implements Repository<Student> {
     @Override
     public void update(Student student) {
         Optional<Student> optStudent = StudentService.findUserById(student.getId());
-
+        if(optStudent.isPresent()){
+            Student foundStudent = optStudent.get();
+            foundStudent.setFirstName(student.getFirstName());
+            foundStudent.setLastName(student.getLastName());
+            foundStudent.setPhone(student.getPhone());
+        }
+        upload();
     }
 
     @Override
