@@ -25,7 +25,8 @@ public class StudentRepo implements Repository<Student> {
                 InputStream inputStream = new FileInputStream(PATH);
                 ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
         ) {
-            return (ArrayList<Student>) objectInputStream.readObject();
+            ArrayList<Student> students1 = (ArrayList<Student>) objectInputStream.readObject();
+            return students1;
         } catch (Throwable e) {
             return new ArrayList<>();
         }

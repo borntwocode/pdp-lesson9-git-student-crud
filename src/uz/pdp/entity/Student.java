@@ -7,7 +7,7 @@ public class Student implements Serializable {
     private String firstName;
     private String lastName;
     private String phone;
-    private static Integer lastId = 0;
+    private static Integer lastId = 1;
 
     public Student(String firstName, String lastName, String phone) {
         this.firstName = firstName;

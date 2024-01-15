@@ -28,7 +28,7 @@ public class StudentService {
     public static void print(){
         List<Student> all = studentRepo.findAll();
         for (Student student : all) {
-            System.out.println();
+            System.out.println(student);
         }
     }
     public static void edit(){
@@ -50,5 +50,4 @@ public class StudentService {
         Student student = chooseUser();
         studentRepo.delete(student);
     }
-
 }
