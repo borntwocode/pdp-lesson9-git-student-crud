@@ -46,5 +46,9 @@ public class StudentService {
         Optional<Student> chosenUserOpt = findUserById(Input.INPUT_INT("Choose User"));
         return chosenUserOpt.orElse(null);
     }
+    public static void remove(){
+        Student student = chooseUser();
+        studentRepo.delete(student);
+    }
 
 }

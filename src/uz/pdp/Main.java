@@ -12,6 +12,7 @@ public class Main {
                 case 1 -> StudentService.add();
                 case 2 -> StudentService.print();
                 case 3 -> StudentService.edit();
+                case 4 -> StudentService.remove();
             }
         }
 
