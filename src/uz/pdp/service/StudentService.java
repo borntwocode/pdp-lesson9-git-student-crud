@@ -2,6 +2,7 @@ package uz.pdp.service;
 
 import uz.pdp.db.StudentRepo;
 import uz.pdp.entity.Student;
+import uz.pdp.util.Input;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,4 +19,13 @@ public class StudentService {
         }
         return Optional.empty();
     }
+    public static void add(){
+        Student student = new Student(
+                Input.INPUT_STR("Enter Student First Name"),
+                Input.INPUT_STR("Enter Student Last Name"),
+                Input.INPUT_STR("Enter Student Phone Number")
+        );
+        studentRepo.add(student);
+    }
+
 }
