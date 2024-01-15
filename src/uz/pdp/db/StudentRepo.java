@@ -52,7 +52,7 @@ public class StudentRepo implements Repository<Student> {
 
     @Override
     public List<Student> findAll() {
-        return null;
+        return students;
     }
 
     @Override
