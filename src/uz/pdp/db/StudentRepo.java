@@ -2,7 +2,6 @@ package uz.pdp.db;
 
 import uz.pdp.entity.Student;
 import uz.pdp.service.StudentService;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ public class StudentRepo implements Repository<Student> {
     private List<Student> students;
     private static StudentRepo singleton;
     private static String PATH = "src/uz/pdp/db/student_db.txt";
-
     private StudentRepo(List<Student> students) {
         this.students = students;
     }
@@ -22,7 +20,6 @@ public class StudentRepo implements Repository<Student> {
         }
         return singleton;
     }
-
     private static ArrayList<Student> loadData(){
         try (
                 InputStream inputStream = new FileInputStream(PATH);
@@ -49,12 +46,10 @@ public class StudentRepo implements Repository<Student> {
             throw new RuntimeException(e);
         }
     }
-
     @Override
     public List<Student> findAll() {
         return students;
     }
-
     @Override
     public void update(Student student) {
         Optional<Student> optStudent = StudentService.findUserById(student.getId());
@@ -66,9 +61,9 @@ public class StudentRepo implements Repository<Student> {
         }
         upload();
     }
-
     @Override
     public void delete(Student student) {
-
+        students.remove(student);
+        upload();
     }
 }
