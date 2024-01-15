@@ -35,6 +35,9 @@ public class Student implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    public void setId(Integer id) {
+        this.id = id;
+    }
     @Override
     public String toString() {
         return id + "  " + firstName + " " + lastName;

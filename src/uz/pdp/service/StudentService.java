@@ -31,5 +31,20 @@ public class StudentService {
             System.out.println();
         }
     }
+    public static void edit(){
+        Student chosenUser = chooseUser();
+        Student student = new Student(
+                Input.INPUT_STR("Enter New First Name"),
+                Input.INPUT_STR("Enter New Last Name"),
+                Input.INPUT_STR("Enter New Phone Number")
+        );
+        student.setId(chosenUser.getId());
+        studentRepo.update(student);
+    }
+    private static Student chooseUser(){
+        print();
+        Optional<Student> chosenUserOpt = findUserById(Input.INPUT_INT("Choose User"));
+        return chosenUserOpt.orElse(null);
+    }
 
 }
